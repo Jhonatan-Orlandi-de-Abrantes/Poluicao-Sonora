@@ -1,78 +1,145 @@
 <!DOCTYPE html>
-<title>Poluição Sonora</title>
 <html lang="pt-BR">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poluição Sonora - Investigação Científica</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     
     <style>
         body {
-            background: linear-gradient(to right, #a4a4a4, #ffffff);
-            font-family: 'Poppins';
-            text-align: center; }
+            background-color: #f5f5f5;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            text-align: justify;
+            color: #333; }
         header {
-            position: initial;
-            top: 0;
-            width: auto;
-            padding: 0.2rem;
-            font-size: 1.8em;
-            border-top: 0px;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
+            justify-content: center;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 0;
             text-align: center;
-            font-family: 'Poppins';
-            text-align: center;
-            background: linear-gradient(to right, #232323, #818182, #818182, #232323); }
-        h2 {
-            margin: 75px;
-            padding: 35px;
-            border-radius: 90px;
-            background-color: #2d2d2d42; }
+            background: linear-gradient(to right, #232323, #5a5a5a);
+            color: white; }
+        header img {
+            width: 64px;
+            margin-left: 15px;
+            border-radius: 8px; }
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px; }
         h1 {
-            color: white; }
-        footer {
-            bottom: 0;
-            width: auto;
-            z-index: 1000;
-            font-family: 'Arial';
-            font-size: 0.7em;
-            padding: 7px 0px;
-            margin: 0%;
             text-align: center;
-            background-color: #000000ca;
-            color: white; }
+            font-size: 2em;
+            margin: 0; }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px; }
+        section {
+            margin-bottom: 20px; }
+        h2 {
+            background-color: #e0e0e0;
+            padding: 10px;
+            border-left: 5px solid #232323;
+            cursor: pointer; }
+        h2:hover {
+            transition: transform 0.1s ease-in-out;
+            transform: scale(1.01); }
+        p {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+            text-indent: 20px; }
+        img {
+            display: block;
+            margin: 20px auto;
+            width: 64px;
+            border-radius: 8px; }
         img:hover {
-            transition-duration: 250ms;
-            transform: scale(1.05); }
-        section:hover {
-            transition-duration: 250ms;
-            transform: scale(1.05); }
+            transition: transform 0.3s ease-in-out;
+            transform: scale(1.02); }
+        footer {
+            text-align: center;
+            padding: 1.5px;
+            background-color: #232323;
+            color: white;
+            font-size: 0.9em; }
     </style>
-<head>
-
+</head>
 <body>
+
     <header>
-        <h1>Poluição Sonora</h1>
+        <div class="header-container">
+            <h1>Ruído Zero: Investigação Científica</h1>
+            <img src="https://i.pinimg.com/736x/4c/b0/8d/4cb08d41a358f31ce071379fa14e8198.jpg" alt="Segredo...">
+        </div>
     </header>
 
-    <section>
-        <h2>Professores auxíliares desse projeto: Lucas Moura e Mayara Jordano</h2>
-    </section>
+    <main>
+        <section>
+            <h2 onclick="toggleText(this)">Professores Orientadores</h2>
+            <p>Lucas Moura e Mayara Jordano.</p>
+        </section>
 
-    <section>
-        <h2>Tema: Investigação Científica - Senac Lapa Tito</h2>
-    </section>
+        <section>
+            <h2 onclick="toggleText(this)">Tema da Pesquisa</h2>
+            <p>Este estudo investiga os impactos da poluição sonora no centro de São Paulo, com análises realizadas por alunos do Senac Lapa Tito.</p>
+        </section>
 
-    <img src="https://i.pinimg.com/736x/4c/b0/8d/4cb08d41a358f31ce071379fa14e8198.jpg" alt="" width="250" height="230">
-    
-    <p></p>
-    
+        <section>
+            <h2 onclick="toggleText(this)">Introdução</h2>
+            <p>A poluição sonora é um problema crescente em áreas urbanas. Neste estudo, buscamos compreender seus efeitos na saúde pública e no bem-estar da população.</p>
+        </section>
+
+        <section>
+            <h2 onclick="toggleText(this)">Metodologia</h2>
+            <p>Foram realizadas medições de ruído em diferentes pontos da cidade, além da coleta de dados qualitativos por meio de entrevistas com moradores e trabalhadores da região.</p>
+        </section>
+
+        <section>
+            <h2 onclick="toggleText(this)">Referências e Links Úteis</h2>
+            <p>Para mais informações sobre poluição sonora, consulte os seguintes materiais:</p>
+            <ul>
+                <li><a href="https://www.who.int/">Organização Mundial da Saúde</a></li>
+                <li><a href="https://www.ibge.gov.br/">Instituto Brasileiro de Geografia e Estatística</a></li>
+                <li><a href="https://www.scielo.org/">Biblioteca Científica SciELO</a></li>
+            </ul>
+        </section>
+    </main>
+
     <footer>
-        <p>&copy; 2025 Poluição Sonora. Feito por Jhonatan Orlandi e Diego Camilo.</p>
+        <p>&copy; 2025 - Ruído Zero. Desenvolvido por Jhonatan Orlandi.</p>
     </footer>
+
 </body>
+
+<script>
+    function toggleText(element) {
+        let paragraph = element.nextElementSibling;
+        if (paragraph.style.maxHeight === "0px" || paragraph.style.maxHeight === "") {
+            paragraph.style.maxHeight = paragraph.scrollHeight + "px";
+        } else {
+            paragraph.style.maxHeight = "0px";
+        }
+    }
+    
+    document.addEventListener("DOMContentLoaded", function() {
+        let paragraphs = document.querySelectorAll("section p");
+        paragraphs.forEach(p => p.style.maxHeight = "0px");
+    });
+</script>
+
 </html>
