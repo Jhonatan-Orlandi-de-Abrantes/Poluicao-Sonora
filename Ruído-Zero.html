@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poluição Sonora - Investigação Científica</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    
-    <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poluição Sonora - Investigação Científica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
         body {
             background-color: #f5f5f5;
             font-family: 'Poppins', sans-serif;
@@ -17,116 +15,133 @@
             margin: 0;
             padding: 0;
             text-align: justify;
-            color: #333; }
+            color: #333;
+        }
         header {
-            justify-content: center;
-            width: 100%;
             display: flex;
+            justify-content: center;
             align-items: center;
             padding: 15px 0;
-            text-align: center;
             background: linear-gradient(to right, #232323, #5a5a5a);
-            color: white; }
+            color: white;
+        }
         header img {
             width: 64px;
             margin-left: 15px;
-            border-radius: 8px; }
+            border-radius: 8px;
+        }
         .header-container {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px; }
+            gap: 15px;
+        }
         h1 {
             text-align: center;
             font-size: 2em;
-            margin: 0; }
+            margin: 0;
+        }
         main {
             max-width: 1000px;
             margin: 20px auto;
             padding: 20px;
             background: white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px; }
+            border-radius: 8px;
+        }
         section {
-            margin-bottom: 20px; }
+            margin-bottom: 20px;
+        }
         h2 {
             background-color: #e0e0e0;
             padding: 10px;
             border-left: 5px solid #232323;
-            cursor: pointer; }
+            cursor: pointer;
+        }
         h2:hover {
             transition: transform 0.1s ease-in-out;
-            transform: scale(1.01); }
-        p {
+            transform: scale(1.01);
+        }
+        .collapsible-content {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s ease-in-out;
-            text-indent: 20px; }
+        }
+        section p, section h3 {
+            margin: 10px 0;
+            text-indent: 20px;
+        }
         footer {
-            line-height: 0;
-            text-align: center;
-            padding: 10px;
-            background-color: #232323;
-            color: white;
-            font-size: 0.9em; }
-        div {
-            justify-content: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
             width: 100%;
-            align-items: center;
-            padding: 15px 0;
+            height: 60px;
+            background-color: #232323ce;
             text-align: center;
-            align-content: center; }
-        .collapsible {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-in-out; }
+            color: white;
+            font-size: 0.9em;
+        }
         .map-container {
             display: flex;
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
-            margin-bottom: 20px; }
+            margin-bottom: 20px;
+        }
         .map-item {
             flex: 1 1 45%;
-            text-align: center; }
+            text-align: center;
+        }
         .map-item img {
             width: 100%;
             max-width: 100%;
             height: auto;
             border-radius: 8px;
-            box-shadow: 0 0 8px rgba(0,0,0,0.1); }
-    </style>
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+        .info-layer table td {
+            padding: 5px;
+            text-align: left;
+        }
+</style>
 </head>
 <body>
+ 
+<header>
 
-    <header>
-        <div class="header-container">
-            <h1>Ruído Zero: Investigação Científica</h1>
-            <img src="https://i.pinimg.com/736x/d0/3b/58/d03b5862680907ad891f10d26e216cbe.jpg" alt="Ruído-Zero_Logotipo" border-radius="8px">
-        </div>
-    </header>
+<div class="header-container">
+    <h1>Ruído Zero: Investigação Científica</h1>
+    <img src="https://i.pinimg.com/736x/d0/3b/58/d03b5862680907ad891f10d26e216cbe.jpg" alt="Ruído-Zero_Logotipo">
+</div>
 
-    <main>  
-        <section>
-            <h2 onclick="toggleText(this)">Tema da Pesquisa</h2>
-            <p>Esta pesquisa científica feita pelos alunos Jhonatan Orlandi, Heitor Cavalcanti, Diego Camilo, Renato Dias e Thiago Alves do Senac Lapa Tito e auxiliada pelos professores Lucas Moura e Mayara Jordano, busca investigar os impactos na sáude da poluição sonora no centro de São Paulo mostrando um mapa, feito por INAD SP, veja mais nos materiais de referência abaixo, que demonstra de forma gráfica quais partes do centro possuem maior concentração de poluição sonora. De acordo com a Organização Mundial da Saúde (OMS) a poluição sonora é o segundo maior agente poluidor ambiental, depois da poluição do ar e muitas pessoas desconhecem que ela é um fator prejudicial á saúde pública.</p>
-        </section>
-        
-        <section>
-            <h2 onclick="toggleText(this)">Introdução</h2>
-            <h3>Definição de poluição sonora</h3>
-            <p>A definição científica da poluição sonora pode ser definida como "Toda energia lançada no meio ambiente, incluindo aquela sob a forma de som, que extrapole os limites estabelecidos pelos padrões e que considera que os níveis superiores aos estabelecidos naquela área são prejudiciais à saúde e ao sossego público".</p> 
-            <h3>Método científico, principal pergunta e hipótese</h3>
-            <p>Em nossa busca, utilizamos o debate bibliográfico, um método que utiliza a análise e discussão de textos existentes sobre um tema específico para responder a uma pergunta de pesquisa, desenvolver um argumento ou apresentar novas perspectivas sobre um assunto. Nossa principal pergunta é: Como a poluição sonora pode afetar diretamente e indiretamente a nossa saúde? Após pensarmos, concluimos a seguinte hipótese: que a poluição sonora pode nos afetar desenvolvendo problemas de saúde e/ou intensificando os já existentes, e que ela pode fazer isso de forma indireta, como, por exemplo, nos levando ao cansaço e ao estresse, assim, piorando nosso estar mental e nos deixando mais propensos a termos problemas como insônia e ansiedade. 
-            <h3>Conclusão</h3>
-            <p>Ao pesquisarmos sobre os impactos na saúde, descobrimos que a exposição a poluição sonora pode causar diferentes efeitos negativos na saúde do ser humano, tanto no campo físico quanto no mental. São alguns deles: Disturbio no sono, estresse, irritabilidade, disturbios psicológicos, zumbidos, dificuldades na concentração e dores na cabeça. Há mais muito mais prejuízos além desses, colocamos eles pois são os principais causados.</p>
-        </section>
+</header>
+ 
+<main>
 
-        <section>
-            <h2 onclick="toggleText(this)">Mapa</h2>
-            <p>Os mapas a seguir demonstram as taxas de decibéis na região do centro de São Paulo de dia e de noite.</p>
-        </section>
+<section>
+<h2 onclick="toggleContent(this)">Tema da Pesquisa</h2>
+<div class="collapsible-content">
+<p>Esta pesquisa científica feita pelos alunos Jhonatan Orlandi, Heitor Cavalcanti, Diego Camilo, Renato Dias, Thiago Alves e auxiliada pelos professores Lucas Moura e Mayara Jordano do Senac Lapa Tito busca investigar sobre os impactos na sáude da poluição sonora no centro de São Paulo, utilizando um mapa feito pelo INAD SP para também entrar mais a fundo no qual grave é a proporção desse problema na nossa região. De acordo com a Organização Mundial da Saúde (OMS) a poluição sonora é o segundo maior agente poluidor ambiental, ficando somente atrás da poluição do ar.</p>
+</div>
+</section>
 
+<section>
+    <h2 onclick="toggleContent(this)">Introdução</h2>
+    <div class="collapsible-content">
+        <h3>Definição de poluição sonora</h3>
+        <p>A definição científica da poluição sonora pode ser definida como toda energia lançada no meio ambiente, incluindo aquela sob a forma de som, que extrapole os limites estabelecidos pelos padrões e que considera que os níveis superiores aos estabelecidos naquela área são prejudiciais à saúde e ao sossego público.</p> 
+        <h3>Método científico, principal pergunta e hipótese</h3>
+        <p>Em nossa busca, utilizamos o debate bibliográfico, um método científico que utiliza a análise e discussão de textos existentes sobre um tema específico para responder a uma pergunta de pesquisa, desenvolver um argumento ou apresentar novas perspectivas sobre um assunto. Nossa principal pergunta é: Como a poluição sonora pode afetar diretamente e indiretamente a nossa saúde? Após pensarmos um pouco em equipe concluimos a seguinte hipótese: a poluição sonora pode nos afetar desenvolvendo problemas de saúde e/ou intensificando os já existentes, e que ela pode fazer isso de forma indireta, como por exemplo, nos levando ao cansaço e ao estresse, assim, piorando nosso estar mental e nos deixando mais propensos a termos problemas como insônia e ansiedade por exemplo.</p>
+        <h3>Conclusão</h3>
+        <p>Ao pesquisarmos sobre impactos na saúde causados pela poluição sonora, descobrimos que a exposição a ela pode causar diferentes efeitos negativos na saúde do ser humano, tanto no campo físico quanto no mental.Alguns deles são o disturbio no sono, o estresse, irritabilidade, disturbios psicológicos, zumbidos, dificuldades na concentração e dores na cabeça.</p>
+    </div>
+</section>
+
+<section>
+    <h2 onclick="toggleContent(this)">Mapa</h2>
+    <div class="collapsible-content">
+        <p>Os mapas a seguir demonstram as taxas de decibéis na região do centro de São Paulo, de dia e de noite:</p>
         <div class="map-container">
             <div class="map-item">
                 <h3>Mapa de Ruído: Dia</h3>
@@ -136,87 +151,37 @@
                 <h3>Mapa de Ruído: Noite</h3>
                 <img src="https://www.mapaderuidosp.org.br/wp-content/uploads/2019/04/Mapa-Centro-SP-2019-Noite.jpg" alt="Mapa-de-Ruído:Noite">
             </div>
-            <h3>Descrição das cores:</h3>
-            <div class="info-layer" style="display: flex;">
-                <table>
-                    <tr>
-                        <td style="background-color:#007229; border:solid 1px #007229; text-align:center; width:25px;"></td>
-                        <td>&gt; 35.0 dBA</td>
-                    </tr>
-                    <tr>
-                        <td style="background-color:#0f4d2a; border:solid 1px #0f4d2a; text-align:center; width:25px;"></td>
-                        <td>&gt; 40.0 dBA</td>
-                    </tr>
-                    <tr>
-                        <td style="background-color:#e4e400; border:solid 1px #e4e400; text-align:center; width:25px;"></td>
-                        <td>&gt; 45.0 dBA</td>
-                    </tr>
-                    <tr>
-                        <td style="background-color:#aba200; border:solid 1px #aba200; text-align:center; width:25px;"></td>
-                        <td>&gt; 50.0 dBA</td>
-                    </tr>
-                    <tr>
-                        <td style="background-color:#ff5f00; border:solid 1px #ff5f00; text-align:center; width:25px;"></td>
-                        <td>&gt; 55.0 dBA</td>
-                    </tr>
-                    <tr>
-                        <td style="background-color:#db0c41; border:solid 1px #db0c41; text-align:center; width:25px;"></td>
-                        <td>&gt; 60.0 dBA</td>
-                    </tr>
-                    <tr>
-                        <td style="background-color:#ae005f; border:solid 1px #ae005f; text-align:center; width:25px;"></td>
-                        <td>&gt; 65.0 dBA</td>
-                    </tr>
-                    <tr>
-                        <td style="background-color:#92499e; border:solid 1px #92499e; text-align:center; width:25px;"></td>
-                        <td>&gt; 70.0 dBA</td>
-                    </tr>
-                    <tr>
-                        <td style="background-color:#4f1f91; border:solid 1px #4f1f91; text-align:center; width:25px;"></td>
-                        <td>&gt; 75.0 dBA</td>
-                    </tr>
-                    <tr>
-                        <td style="background-color:#211265; border:solid 1px #211265; text-align:center; width:25px;"></td>
-                        <td>&gt; 80.0 dBA</td>
-                    </tr>
-                </table>
-            </div>
-            <h3>Para mais informações sobre o local acesse o mapa nos links de referência abaixo!</h3>
         </div>
+    </div>
+</section>
+ 
+<section>
+    <h2 onclick="toggleContent(this)">Referências</h2>
+    <div class="collapsible-content">
+        <ul>
+        <li><a href="https://www.mapaderuidosp.org.br/mapa-de-ruido/mapa-centro-sp/">INAD SP - Mapa</a></li>
+        <li><a href="https://beecorp.com.br/poluicao-sonora/">Becorp - Definição de poluição sonora</a></li>
+        </ul>
+    </div>
+</section>
 
-        <section>
-            <h2 onclick="toggleText(this)">Referências</h2>
-            <div class="collapsible">
-                <ul>
-                    <li><a href="https://www.mapaderuidosp.org.br/mapa-de-ruido/mapa-centro-sp/">INAD SP - Mapa</a></li>
-                    <li><a href="https://earth.google.com/web/search/Centro+de+S%c3%a3o+Paulo+-+Rep%c3%bablica,+S%c3%a3o+Paulo+-+SP/@-23.54533273,-46.6368914,738.48990153a,7088.19939512d,35y,0h,0t,0r/data=CiwiJgokCUzMPqgRkgnAEaYhAv6LmlDAGaLiPTl6SVxAIS-zHqyKU1bAQgIIAToDCgEwQgIIAEoICKPXo6UEEAA">Google Earth - Mapa gráfico Aplicado</a></li>
-                    <li><a href="https://beecorp.com.br/poluicao-sonora/">Becorp - Definição de poluição sonora</a></li>
-                </ul>
-            </div>
-        </section>
-
-        </main>
-
-    <footer>
-        <p style="overflow: visible;">&copy; 2025 - Ruído Zero. Desenvolvido por Jhonatan Orlandi.</p>
-    </footer>
-
+</main>
+ 
+<footer>
+    <p>&copy; 2025 - Ruído Zero. Desenvolvido por Jhonatan Orlandi.</p>
+</footer>
+ 
 </body>
-
+ 
 <script>
-    function toggleText(element) {
-        let paragraph = element.nextElementSibling;
-        if (paragraph.style.maxHeight === "0px" || paragraph.style.maxHeight === "") {
-            paragraph.style.maxHeight = paragraph.scrollHeight + "px";
+    function toggleContent(element) {
+        const content = element.nextElementSibling;
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
         } else {
-            paragraph.style.maxHeight = "0px";
+            content.style.maxHeight = content.scrollHeight + "px";
         }
     }
-    
-    document.addEventListener("DOMContentLoaded", function() {
-        let paragraphs = document.querySelectorAll("section p");
-        paragraphs.forEach(p => p.style.maxHeight = "0px");
-    });
 </script>
-
+ 
 </html>
