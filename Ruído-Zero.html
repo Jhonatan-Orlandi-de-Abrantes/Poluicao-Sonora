@@ -41,7 +41,7 @@
             font-size: 2em;
             margin: 0; }
         main {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 20px auto;
             padding: 20px;
             background: white;
@@ -76,6 +76,26 @@
             padding: 15px 0;
             text-align: center;
             align-content: center; }
+        .collapsible {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out; }
+        .map-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px; }
+        .map-item {
+            flex: 1 1 45%;
+            text-align: center; }
+        .map-item img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1); }
+
     </style>
 </head>
 <body>
@@ -103,11 +123,15 @@
             <p>Os mapas a seguir demonstram as taxas de decibéis na região do centro de São Paulo de dia e de noite.</p>
         </section>
 
-        <div>
-            <h3>Mapa de Ruído: Dia</h3>
-            <img src="https://www.mapaderuidosp.org.br/wp-content/uploads/2019/04/Mapa-Centro-SP-2019-Dia.jpg" alt=Mapa-de-Ruído:Dia width="500px">
-            <h3>Mapa de Ruído: Noite</h3>
-            <img src="https://www.mapaderuidosp.org.br/wp-content/uploads/2019/04/Mapa-Centro-SP-2019-Noite.jpg" alt=Mapa-de-Ruído:Noite width="500px">
+        <div class="map-container">
+            <div class="map-item">
+                <h3>Mapa de Ruído: Dia</h3>
+                <img src="https://www.mapaderuidosp.org.br/wp-content/uploads/2019/04/Mapa-Centro-SP-2019-Dia.jpg" alt="Mapa-de-Ruído:Dia">
+            </div>
+            <div class="map-item">
+                <h3>Mapa de Ruído: Noite</h3>
+                <img src="https://www.mapaderuidosp.org.br/wp-content/uploads/2019/04/Mapa-Centro-SP-2019-Noite.jpg" alt="Mapa-de-Ruído:Noite">
+            </div>
             <h3>Descrição das cores:</h3>
             <div class="info-layer" style="display: flex;">
                 <table>
@@ -151,23 +175,23 @@
                         <td style="background-color:#211265; border:solid 1px #211265; text-align:center; width:25px;"></td>
                         <td>&gt; 80.0 dBA</td>
                     </tr>
-                    <tr>
-                        <td class="legend-nodata"></td>
-                        <td>Sem informação</td>
-                    </tr>
                 </table>
             </div>
             <h3>Para mais informações sobre o local acesse o mapa nos links de referência abaixo!</h3>
         </div>
 
-        <h2>Referências</h2>
-        <h3>Artigos usados de referência:</h3>
-        <ul>
-            <li><a href="https://www.mapaderuidosp.org.br/mapa-de-ruido/mapa-centro-sp/">INAD SP - Mapa</a></li>
-            <li><a href="https://earth.google.com/web/search/Centro+de+S%c3%a3o+Paulo+-+Rep%c3%bablica,+S%c3%a3o+Paulo+-+SP/@-23.54533273,-46.6368914,738.48990153a,7088.19939512d,35y,0h,0t,0r/data=CiwiJgokCUzMPqgRkgnAEaYhAv6LmlDAGaLiPTl6SVxAIS-zHqyKU1bAQgIIAToDCgEwQgIIAEoICKPXo6UEEAA">Google Earth - Mapa gráfico Aplicado</a></li>
-            <li><a href="https://beecorp.com.br/poluicao-sonora/">Becorp - Definição de poluição sonora</a></li>
-        </ul>
-    </main>
+        <section>
+            <h2 onclick="toggleText(this)">Referências</h2>
+            <div class="collapsible">
+                <ul>
+                    <li><a href="https://www.mapaderuidosp.org.br/mapa-de-ruido/mapa-centro-sp/">INAD SP - Mapa</a></li>
+                    <li><a href="https://earth.google.com/web/search/Centro+de+S%c3%a3o+Paulo+-+Rep%c3%bablica,+S%c3%a3o+Paulo+-+SP/@-23.54533273,-46.6368914,738.48990153a,7088.19939512d,35y,0h,0t,0r/data=CiwiJgokCUzMPqgRkgnAEaYhAv6LmlDAGaLiPTl6SVxAIS-zHqyKU1bAQgIIAToDCgEwQgIIAEoICKPXo6UEEAA">Google Earth - Mapa gráfico Aplicado</a></li>
+                    <li><a href="https://beecorp.com.br/poluicao-sonora/">Becorp - Definição de poluição sonora</a></li>
+                </ul>
+            </div>
+        </section>
+
+        </main>
 
     <footer>
         <p style="overflow: visible;">&copy; 2025 - Ruído Zero. Desenvolvido por Jhonatan Orlandi.</p>
