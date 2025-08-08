@@ -132,15 +132,15 @@
 <main>
 
 <section>
-<h2 onclick="toggleContent(this)">Tema da Pesquisa</h2>
-<div class="collapsible-content">
+<h2 onclick='toggleContent(this)'>Tema da Pesquisa</h2>
+<div class='collapsible-content'>
 <p>Esta pesquisa científica feita pelos alunos Jhonatan Orlandi, Heitor Cavalcanti, Diego Camilo, Renato Dias, Thiago Alves e auxiliada pelos professores Lucas Moura e Mayara Jordano do Senac Lapa Tito busca investigar sobre os impactos na saúde da poluição sonora no centro de São Paulo, utilizando um mapa feito pelo INAD SP para também entrar mais a fundo no qual grave é a proporção desse problema na nossa região. De acordo com a Organização Mundial da Saúde (OMS) a poluição sonora é o segundo maior agente poluidor ambiental, ficando somente atrás da poluição do ar.</p>
 </div>
 </section>
 
 <section>
-    <h2 onclick="toggleContent(this)">Introdução</h2>
-    <div class="collapsible-content">
+    <h2 onclick='toggleContent(this)'>Introdução</h2>
+    <div class='collapsible-content'>
         <h3>Definição de poluição sonora</h3>
         <p>A definição científica da poluição sonora pode ser definida como toda energia lançada no meio ambiente, incluindo aquela sob a forma de som, que extrapole os limites estabelecidos pelos padrões e que considera que os níveis superiores aos estabelecidos naquela área são prejudiciais à saúde e ao sossego público.</p> 
         <h3>Método científico, principal pergunta e hipótese</h3>
@@ -164,27 +164,24 @@
                 <img src='https://www.mapaderuidosp.org.br/wp-content/uploads/2019/04/Mapa-Centro-SP-2019-Noite.jpg' alt='Mapa-de-Ruído:Noite'>
             </div>
         </div>
+        <!-- LEGENDA DENTRO DA COLLAPSIBLE -->
+        <div class='legend-container'>
+            <strong>Legenda do mapa:</strong>
+            <div class='legend-item'>
+                <span class='legend-color' style='background:#d7df23;'></span>
+                <span>&gt; 45.0 dBA</span>
+            </div>
+            <div class='legend-item'>
+                <span class='legend-color' style='background:#c05594;'></span>
+                <span>&gt; 65.0 dBA</span>
+            </div>
+            <div class='legend-item'>
+                <span class='legend-color' style='background:#2c2377;'></span>
+                <span>&gt; 80.0 dBA</span>
+            </div>
+        </div>
     </div>
 </section>
- 
-<div class='map-container'>
-</div>
-
-<div class='legend-container'>
-    <strong>Legenda do mapa:</strong>
-    <div class='legend-item'>
-        <span class='legend-color' style='background:#d7df23;'></span>
-        <span>> 45.0 dBA</span>
-    </div>
-    <div class='legend-item'>
-        <span class='legend-color' style='background:#c05594;'></span>
-        <span>> 65.0 dBA</span>
-    </div>
-    <div class='legend-item'>
-        <span class='legend-color' style='background:#2c2377;'></span>
-        <span>> 80.0 dBA</span>
-    </div>
-</div>
 
 <section>
     <h2 onclick='toggleContent(this)'>Referências</h2>
