@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang='pt-BR'>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 <title>Poluição Sonora - Investigação Científica</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+<link href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap' rel="stylesheet">
 <style>
         body {
             background-color: #f5f5f5;
@@ -15,62 +15,51 @@
             margin: 0;
             padding: 0;
             text-align: justify;
-            color: #333;
-        }
+            color: #333; }
         header {
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 15px 0;
             background: linear-gradient(to right, #232323, #5a5a5a);
-            color: white;
-        }
+            color: white; }
         header img {
             width: 64px;
             margin-left: 15px;
-            border-radius: 8px;
-        }
+            border-radius: 8px; }
         .header-container {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
-        }
+            gap: 15px; }
         h1 {
             text-align: center;
             font-size: 2em;
-            margin: 0;
-        }
+            margin: 0; }
         main {
             max-width: 1000px;
             margin: 20px auto;
             padding: 20px;
             background: white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
+            border-radius: 8px; }
         section {
-            margin-bottom: 20px;
-        }
+            margin-bottom: 20px; }
         h2 {
             background-color: #e0e0e0;
             padding: 10px;
             border-left: 5px solid #232323;
-            cursor: pointer;
-        }
+            cursor: pointer; }
         h2:hover {
             transition: transform 0.1s ease-in-out;
-            transform: scale(1.01);
-        }
+            transform: scale(1.01); }
         .collapsible-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.5s ease-in-out;
-        }
+            transition: max-height 0.5s ease-in-out; }
         section p, section h3 {
             margin: 10px 0;
-            text-indent: 20px;
-        }
+            text-indent: 20px; }
         footer {
             position: fixed;
             bottom: 0;
@@ -80,30 +69,53 @@
             background-color: #232323ce;
             text-align: center;
             color: white;
-            font-size: 0.9em;
-        }
+            font-size: 0.9em; }
         .map-container {
             display: flex;
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
+            margin-bottom: 20px; }
         .map-item {
             flex: 1 1 45%;
-            text-align: center;
-        }
+            text-align: center; }
         .map-item img {
             width: 100%;
             max-width: 100%;
             height: auto;
             border-radius: 8px;
-            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-        }
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); }
         .info-layer table td {
             padding: 5px;
-            text-align: left;
-        }
+            text-align: left; }
+        .legend-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 0;
+            margin-bottom: 20px;
+            margin-left: 0;
+            background: #f2f2f2;
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px 0 rgba(44, 44, 44, 0.10);
+            max-width: 220px;
+            font-size: 1em; }
+        .legend-container strong {
+            margin-bottom: 8px;
+            color: #333; }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 4px 0;
+            gap: 8px; }
+        .legend-color {
+            display: inline-block;
+            width: 28px;
+            height: 18px;
+            border-radius: 3px;
+            border: 1px solid #999;
+            margin-right: 10px; }
 </style>
 </head>
 <body>
@@ -139,28 +151,47 @@
 </section>
 
 <section>
-    <h2 onclick="toggleContent(this)">Mapa</h2>
-    <div class="collapsible-content">
+    <h2 onclick='toggleContent(this)'>Mapa</h2>
+    <div class='collapsible-content'>
         <p>Os mapas a seguir demonstram as taxas de decibéis na região do centro de São Paulo, de dia e de noite:</p>
-        <div class="map-container">
-            <div class="map-item">
+        <div class='map-container'>
+            <div class='map-item'>
                 <h3>Mapa de Ruído: Dia</h3>
-                <img src="https://www.mapaderuidosp.org.br/wp-content/uploads/2019/04/Mapa-Centro-SP-2019-Dia.jpg" alt="Mapa-de-Ruído:Dia">
+                <img src='https://www.mapaderuidosp.org.br/wp-content/uploads/2019/04/Mapa-Centro-SP-2019-Dia.jpg' alt='Mapa-de-Ruído:Dia'>
             </div>
-            <div class="map-item">
+            <div class='map-item'>
                 <h3>Mapa de Ruído: Noite</h3>
-                <img src="https://www.mapaderuidosp.org.br/wp-content/uploads/2019/04/Mapa-Centro-SP-2019-Noite.jpg" alt="Mapa-de-Ruído:Noite">
+                <img src='https://www.mapaderuidosp.org.br/wp-content/uploads/2019/04/Mapa-Centro-SP-2019-Noite.jpg' alt='Mapa-de-Ruído:Noite'>
             </div>
         </div>
     </div>
 </section>
  
+<div class='map-container'>
+</div>
+
+<div class='legend-container'>
+    <strong>Legenda do mapa:</strong>
+    <div class='legend-item'>
+        <span class='legend-color' style='background:#d7df23;'></span>
+        <span>> 45.0 dBA</span>
+    </div>
+    <div class='legend-item'>
+        <span class='legend-color' style='background:#c05594;'></span>
+        <span>> 65.0 dBA</span>
+    </div>
+    <div class='legend-item'>
+        <span class='legend-color' style='background:#2c2377;'></span>
+        <span>> 80.0 dBA</span>
+    </div>
+</div>
+
 <section>
-    <h2 onclick="toggleContent(this)">Referências</h2>
-    <div class="collapsible-content">
+    <h2 onclick='toggleContent(this)'>Referências</h2>
+    <div class='collapsible-content'>
         <ul>
-        <li><a href="https://www.mapaderuidosp.org.br/mapa-de-ruido/mapa-centro-sp/">INAD SP - Mapa</a></li>
-        <li><a href="https://beecorp.com.br/poluicao-sonora/">Becorp - Definição de poluição sonora</a></li>
+        <li><a href='https://www.mapaderuidosp.org.br/mapa-de-ruido/mapa-centro-sp/'>INAD SP - Mapa</a></li>
+        <li><a href='https://beecorp.com.br/poluicao-sonora/'>Becorp - Definição de poluição sonora</a></li>
         </ul>
     </div>
 </section>
@@ -179,7 +210,7 @@
         if (content.style.maxHeight) {
             content.style.maxHeight = null;
         } else {
-            content.style.maxHeight = content.scrollHeight + "px";
+            content.style.maxHeight = content.scrollHeight + 'px';
         }
     }
 </script>
