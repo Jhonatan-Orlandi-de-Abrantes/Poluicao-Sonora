@@ -9,7 +9,7 @@
 <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap' rel='stylesheet'>
 <style>
         body {
-            background-color: #f5f5f5;
+            background-color: #b1faff28;
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             margin: 0;
@@ -21,7 +21,7 @@
             justify-content: center;
             align-items: center;
             padding: 15px 0;
-            background: linear-gradient(to right, #232323, #5a5a5a);
+            background: linear-gradient(to right, #00b4c1, #00eaf2);
             color: white; }
         header img {
             width: 64px;
@@ -41,7 +41,7 @@
             margin: 20px auto;
             padding: 20px;
             background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px #0000001a;
             border-radius: 8px; }
         section {
             margin-bottom: 20px; }
@@ -57,7 +57,11 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s ease-in-out; }
-        section p, section h3 {
+        section p {
+            margin: 20px auto;
+            max-width: 80%;
+            color: #333; }
+        section h3 {
             margin: 10px 0;
             text-indent: 20px; }
         footer {
@@ -98,7 +102,7 @@
             background: #f2f2f2;
             padding: 12px 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 6px 0 rgba(44, 44, 44, 0.10);
+            box-shadow: 0 2px 6px 0 #2c2c2c1a;
             max-width: 220px;
             font-size: 1em; }
         .legend-container strong {
@@ -116,6 +120,22 @@
             border-radius: 3px;
             border: 1px solid #999;
             margin-right: 10px; }
+        .textos {
+            margin: 20px auto;
+            max-width: 80%;
+            color: #333; }
+        .textos p {
+            margin-bottom: 16px; }
+        .textos h3 {
+            text-align: center;
+            margin-bottom: 16px; }
+        .textos ul {
+            list-style-position: inside;
+            padding-left: 0;
+            margin-bottom: 16px; }
+        .textos li {
+            margin-bottom: 16px; }
+
 </style>
 </head>
 <body>
@@ -128,111 +148,121 @@
 </div>
 
 </header>
-  
+
 <main>
 
-<section>
-    <h2 onclick='toggleContent(this)'>Tema da Pesquisa</h2>
-    <div class='collapsible-content'>
-        <p>Esta pesquisa científica feita pelos alunos Jhonatan Orlandi, Heitor Cavalcanti, Diego Camilo, Renato Dias, Thiago Alves e auxiliada pelos professores Lucas Moura e Mayara Jordano do Senac Lapa Tito busca investigar sobre os impactos na saúde da poluição sonora no centro de São Paulo, utilizando um mapa feito pelo INAD SP para também entrar mais a fundo no qual grave é a proporção desse problema na nossa região. De acordo com a Organização Mundial da Saúde (OMS) a poluição sonora é o segundo maior agente poluidor ambiental, ficando somente atrás da poluição do ar.</p>
-    </div>
-</section>
-
-<section>
-    <h2 onclick='toggleContent(this)'>Introdução</h2>
-    <div class='collapsible-content'>
-        <h3>Definição de poluição sonora</h3>
-        <p>A definição científica da poluição sonora pode ser definida como toda energia lançada no meio ambiente, incluindo aquela sob a forma de som, que extrapole os limites estabelecidos pelos padrões e que considera que os níveis superiores aos estabelecidos naquela área são prejudiciais à saúde e ao sossego público.</p> 
-        <h3>Método científico, principal pergunta e hipótese</h3>
-        <p>Em nossa busca, utilizamos o debate bibliográfico, um método científico que utiliza a análise e discussão de textos existentes sobre um tema específico para responder a uma pergunta de pesquisa, desenvolver um argumento ou apresentar novas perspectivas sobre um assunto. Nossa principal pergunta é: Como a poluição sonora pode afetar diretamente e indiretamente a nossa saúde? Após pensarmos um pouco em equipe concluimos a seguinte hipótese: a poluição sonora pode nos afetar desenvolvendo problemas de saúde e/ou intensificando os já existentes, e que ela pode fazer isso de forma indireta, como por exemplo, nos levando ao cansaço e ao estresse, assim, piorando nosso estar mental e nos deixando mais propensos a termos problemas como insônia e ansiedade por exemplo.</p>
-        <h3>Conclusão</h3>
-        <p>Ao pesquisarmos sobre impactos na saúde causados pela poluição sonora, descobrimos que a exposição a ela pode causar diferentes efeitos negativos na saúde do ser humano, tanto no campo físico quanto no mental. Alguns deles são o distúrbio no sono, o estresse, a irritabilidade, os distúrbios psicológicos, os zumbidos, as dificuldades na concentração e até mesmo dores de cabeça.</p>
-    </div>
-</section>
-
-<section>
-    <h2 onclick='toggleContent(this)'>Impacto ambiental e prevenção</h2>
-    <div class='collapsible-content'>
-        <h3>Formas de denuncia</h3>
-        <p>Na maioria dos casos, seja de um estabelecimento ou locais comerciais, um dos responsáveis são o Programa Silêncio Urbano (PSIU), da Prefeitura de São Paulo. Mas detalhe crucial: O PSIU não fiscaliza barulho de residências, apenas locais comerciais e obras particulares.Também é possível constatar o  Ministério Público, se for algo grave e recorrente.</p>
-        <p>Como denunciar:</p>  
-        <ul>   
-            <li>Ligue para o telefone 156</li>
-            <li><a href='https://prefeitura.sp.gov.br/web/subprefeituras/w/zeladoria/psiu/8831/'>Acesse o Portal SP156</a></li>
-            <li>Para casos pequenos como residências e condomínios (vizinhos, festas, som alto), não há uma fiscalização direta pela prefeitura.</li>
-            <li>Primeiro, tente resolver com o síndico (em condomínios)</li>
-            <li>Se não resolver, acione a Polícia Militar (<b>190</b>) em casos mais graves.</li>
-            <li>Você pode contatar o IBAMA – Linha Verde: quando envolve impacto maior em animais e meio ambiente pelo número <b>0800 61 8080</b></li>
-        </ul>
-
-        <h3>Tipos de Poluição Sonora</h3>
-        <ul>   
-            <li><b>Tráfego de veículos:</b> Veiculos em movimento e/ou trânsito. Ocorrendo principalmente em partes urbanas.</li>
-            <li><b>Atividades industriais e construções:</b> Equipamentos industriais como serralheiro, construções etc. Geram níveis elevados de ruído, para quem trabalha ou mora próximo.</li>
-            <li><b>Atividades aeroportuárias:</b> O ruído de aeronaves decolando ou pousando etc. Que atrapalha que mora próximo de aeroportos.</li>
-            <li><b>Eventos sociais:</b> Shows de bandas, festas etc. Causam um valor incomodante para as pessoas próximas.</li>
-        </ul>
-
-        <h3>Como isso afeta os animais</h3>
-        <p>A poluição sonora também prejudica bastante os animais, não só os seres humanos. Muitos bichos dependem do som para se comunicar, caçar, fugir de predadores e até para se reproduzir. Quando o ambiente está cheio de barulho causado por carros, fábricas, fogos de artifício ou navios, isso atrapalha o jeito natural deles viverem.
-        <p>Os animais podem ficar estressados, confusos, perder o instinto de se orientar e até abandonar lugares onde costumavam viver. Em alguns casos, como com as baleias e golfinhos, o excesso de barulho no mar pode causar até ferimentos sérios ou a morte. Até os pássaros nas cidades mudam o canto por causa do barulho, o que dificulta a reprodução. E por isso, a poluição sonora é um problema real para os animais e pode colocar em risco a sobrevivência de muitas espécies.</li>
-
-        <h3>Como afeta os idosos</h3>
-        <p>O ruído constante de carros, buzinas, obras, festas e até eletrodomésticos não é só perturbador: ele prejudica a qualidade de vida de quem já lida com os desafios do envelhecimento. Para muitos idosos, a audição já está naturalmente mais frágil, e o excesso de ruídos agrava a perda auditiva, dificultando a comunicação e afastando-os das interações sociais.</p>
-        <p>Porém, os prejuízos não se limitam a isso. O excesso de ruído causa estresse, eleva a pressão arterial e pode levar à insônia elementos que agravam doenças cardiovasculares e neurológicas, frequentes nessa faixa etária. Ademais, o idoso exposto a ruídos constantes pode desenvolver constantes pode levar ao desenvolvimento de ansiedade, irritabilidade e até depressão, pois o descanso e a sensação de calma se tornam quase inalcançáveis.</p>
-    </div>
-</section>
-
-<section>
-    <h2 onclick='toggleContent(this)'>Mapa</h2>
-    <div class='collapsible-content'>
-        <p>Os mapas a seguir demonstram as taxas de decibéis na região do centro de São Paulo, de dia e de noite:</p>
-        <div class='map-container'>
-            <div class='map-item'>
-                <h3>Mapa de Ruído: Dia</h3>
-                <img src='https://www.mapaderuidosp.org.br/wp-content/uploads/2019/04/Mapa-Centro-SP-2019-Dia.jpg' alt='Mapa-de-Ruído:Dia'>
-            </div>
-            <div class='map-item'>
-                <h3>Mapa de Ruído: Noite</h3>
-                <img src='https://www.mapaderuidosp.org.br/wp-content/uploads/2019/04/Mapa-Centro-SP-2019-Noite.jpg' alt='Mapa-de-Ruído:Noite'>
+    <section> 
+        <h2 onclick='toggleContent(this)'>Tema da Pesquisa</h2>
+        <div class='collapsible-content'>
+            <div class="textos">
+                <p>Esta pesquisa científica feita pelos alunos Jhonatan Orlandi, Heitor Cavalcanti, Diego Camilo, Renato Dias, Thiago Alves e auxiliada pelos professores Lucas Moura e Mayara Jordano do Senac Lapa Tito busca investigar sobre os impactos na saúde da poluição sonora no centro de São Paulo, utilizando um mapa feito pelo INAD SP para também entrar mais a fundo no qual grave é a proporção desse problema na nossa região. De acordo com a Organização Mundial da Saúde (OMS) a poluição sonora é o segundo maior agente poluidor ambiental, ficando somente atrás da poluição do ar.</p>
             </div>
         </div>
-
-        <div class='legend-container'>
-            <strong>Legenda do mapa:</strong>
-            <div class='legend-item'>
-                <span class='legend-color' style='background:#bec718;'></span>
-                <span>&gt; 45.0 dBA</span>
-            </div>
-            <div class='legend-item'>
-                <span class='legend-color' style='background:#ca173e;'></span>
-                <span>&gt; 65.0 dBA</span>
-            </div>
-            <div class='legend-item'>
-                <span class='legend-color' style='background:#6a1cca;'></span>
-                <span>&gt; 80.0 dBA</span>
+    </section>
+    
+    <section>
+        <h2 onclick='toggleContent(this)'>Introdução</h2>
+        <div class='collapsible-content'>
+            <div class="textos">
+                <h3>Definição de poluição sonora</h3>
+                <p>A definição científica da poluição sonora pode ser definida como toda energia lançada no meio ambiente, incluindo aquela sob a forma de som, que extrapole os limites estabelecidos pelos padrões e que considera que os níveis superiores aos estabelecidos naquela área são prejudiciais à saúde e ao sossego público.</p>
+          
+                <h3>Método científico, principal pergunta e hipótese</h3>
+                <p>Em nossa busca, utilizamos o debate bibliográfico, um método científico que utiliza a análise e discussão de textos existentes sobre um tema específico para responder a uma pergunta de pesquisa, desenvolver um argumento ou apresentar novas perspectivas sobre um assunto. Nossa principal pergunta é: Como a poluição sonora pode afetar diretamente e indiretamente a nossa saúde? Após pensarmos um pouco em equipe concluímos a seguinte hipótese: a poluição sonora pode nos afetar desenvolvendo problemas de saúde e/ou intensificando os já existentes, e que ela pode fazer isso de forma indireta, como por exemplo, nos levando ao cansaço e ao estresse, assim, piorando nosso estar mental e nos deixando mais propensos a termos problemas como insônia e ansiedade por exemplo.</p>
+                
+                <h3>Conclusão</h3>
+                <p>Ao pesquisarmos sobre impactos na saúde causados pela poluição sonora, descobrimos que a exposição a ela pode causar diferentes efeitos negativos na saúde do ser humano, tanto no campo físico quanto no mental. Alguns deles são o distúrbio no sono, o estresse, a irritabilidade, os distúrbios psicológicos, os zumbidos, as dificuldades na concentração e até mesmo dores de cabeça.</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    
+    <section>
+        <h2 onclick='toggleContent(this)'>Impacto ambiental e prevenção</h2>
+        <div class='collapsible-content'>
+            <div class="textos">
+                <h3>Formas de denúncia</h3>
+                <p>Na maioria dos casos, seja de um estabelecimento ou locais comerciais, um dos responsáveis são o Programa Silêncio Urbano (PSIU), da Prefeitura de São Paulo. Mas detalhe crucial: O PSIU não fiscaliza barulho de residências, apenas locais comerciais e obras particulares. Também é possível constatar o Ministério Público, se for algo grave e recorrente.</p>
+                <p>Como denunciar:</p>
+                <ul>
+                    <li>Ligue para o telefone 156</li>
+                    <li><a href='https://prefeitura.sp.gov.br/web/subprefeituras/w/zeladoria/psiu/8831/'>Acesse o Portal SP156</a></li>
+                    <li>Para casos pequenos como residências e condomínios (vizinhos, festas, som alto), não há uma fiscalização direta pela prefeitura.</li>
+                    <li>Primeiro, tente resolver com o síndico (em condomínios)</li>
+                    <li>Se não resolver, acione a Polícia Militar (<b>190</b>) em casos mais graves.</li>
+                    <li>Você pode contatar o IBAMA – Linha Verde: quando envolve impacto maior em animais e meio ambiente pelo número <b>0800 61 8080</b></li>
+                </ul>
+    
+                <h3>Tipos de Poluição Sonora</h3>
+                <ul>
+                    <li><b>Tráfego de veículos:</b> Veículos em movimento e/ou trânsito. Ocorrendo principalmente em partes urbanas.</li>
+                    <li><b>Atividades industriais e construções:</b> Equipamentos industriais como serralheria, construções etc. Geram níveis elevados de ruído, para quem trabalha ou mora próximo.</li>
+                    <li><b>Atividades aeroportuárias:</b> O ruído de aeronaves decolando ou pousando etc. que atrapalha quem mora próximo de aeroportos.</li>
+                    <li><b>Eventos sociais:</b> Shows de bandas, festas etc. Causam incômodo para as pessoas próximas.</li>
+                </ul>
+    
+                <h3>Como isso afeta os animais</h3>
+                <p>A poluição sonora também prejudica bastante os animais, não só os seres humanos. Muitos bichos dependem do som para se comunicar, caçar, fugir de predadores e até para se reproduzir. Quando o ambiente está cheio de barulho causado por carros, fábricas, fogos de artifício ou navios, isso atrapalha o jeito natural deles viverem.</p>
+                <p>Os animais podem ficar estressados, confusos, perder o instinto de se orientar e até abandonar lugares onde costumavam viver. Em alguns casos, como com as baleias e golfinhos, o excesso de barulho no mar pode causar até ferimentos sérios ou a morte. Até os pássaros nas cidades mudam o canto por causa do barulho, o que dificulta a reprodução. Por isso, a poluição sonora é um problema real para os animais e pode colocar em risco a sobrevivência de muitas espécies.</p>
+    
+                <h3>Como afeta os idosos</h3>
+                <p>O ruído constante de carros, buzinas, obras, festas e até eletrodomésticos não é só perturbador: ele prejudica a qualidade de vida de quem já lida com os desafios do envelhecimento. Para muitos idosos, a audição já está naturalmente mais frágil, e o excesso de ruídos agrava a perda auditiva, dificultando a comunicação e afastando-os das interações sociais.</p>
+                <p>Porém, os prejuízos não se limitam a isso. O excesso de ruído causa estresse, eleva a pressão arterial e pode levar à insônia — elementos que agravam doenças cardiovasculares e neurológicas, frequentes nessa faixa etária. Ademais, o idoso exposto a ruídos constantes pode desenvolver ansiedade, irritabilidade e até depressão, pois o descanso e a sensação de calma se tornam quase inalcançáveis.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <h2 onclick='toggleContent(this)'>Mapa</h2>
+        <div class='collapsible-content'>
+            <div class="textos">
+                <p>Os mapas a seguir demonstram as taxas de decibéis na região do centro de São Paulo, de dia e de noite:</p>
+            </div>
+            <div class='map-container'>
+                <div class='map-item'>
+                    <h3>Mapa de Ruído: Dia</h3>
+                    <img src='https://www.mapaderuidosp.org.br/wp-content/uploads/2019/04/Mapa-Centro-SP-2019-Dia.jpg' alt='Mapa-de-Ruído:Dia'>
+                </div>
+                <div class='map-item'>
+                    <h3>Mapa de Ruído: Noite</h3>
+                    <img src='https://www.mapaderuidosp.org.br/wp-content/uploads/2019/04/Mapa-Centro-SP-2019-Noite.jpg' alt='Mapa-de-Ruído:Noite'>
+                </div>
+            </div>
+    
+            <div class='legend-container'>
+                <strong>Legenda do mapa:</strong>
+                <div class='legend-item'>
+                    <span class='legend-color' style='background:#bec718;'></span>
+                    <span>&gt; 45.0 dBA</span>
+                </div>
+                <div class='legend-item'>
+                    <span class='legend-color' style='background:#ca173e;'></span>
+                    <span>&gt; 65.0 dBA</span>
+                </div>
+                <div class='legend-item'>
+                    <span class='legend-color' style='background:#6a1cca;'></span>
+                    <span>&gt; 80.0 dBA</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <h2 onclick='toggleContent(this)'>Referências</h2>
+        <div class='collapsible-content'>
+            <ul>
+                <li><a href='https://www.mapaderuidosp.org.br/mapa-de-ruido/mapa-centro-sp/'>INAD SP - Mapa</a></li>
+                <li><a href='https://beecorp.com.br/poluicao-sonora/'>Becorp - Definição de poluição sonora</a></li>
+                <li><a href='https://prefeitura.sp.gov.br/web/subprefeituras/w/zeladoria/psiu/8831/'>Acesse o Portal SP156</a></li>
+            </ul>
+        </div>
+    </section>
+  
+    </main>
+  
+    <footer>
+        <p>&copy; 2025 - Ruído Zero. Desenvolvido por Jhonatan Orlandi.</p>
+    </footer>
 
-<section>
-    <h2 onclick='toggleContent(this)'>Referências</h2>
-    <div class='collapsible-content'>
-        <ul>
-        <li><a href='https://www.mapaderuidosp.org.br/mapa-de-ruido/mapa-centro-sp/'>INAD SP - Mapa</a></li>
-        <li><a href='https://beecorp.com.br/poluicao-sonora/'>Becorp - Definição de poluição sonora</a></li>
-        <li><a href='https://prefeitura.sp.gov.br/web/subprefeituras/w/zeladoria/psiu/8831/'>Acesse o Portal SP156</a></li>
-        </ul>
-    </div>
-</section>
-
-</main>
- 
-<footer>
-    <p>&copy; 2025 - Ruído Zero. Desenvolvido por Jhonatan Orlandi.</p>
-</footer>
- 
 </body>
  
 <script>
