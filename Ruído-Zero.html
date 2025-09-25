@@ -8,154 +8,217 @@
 <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
 <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap' rel='stylesheet'>
 <style>
-        body {
-            background-color: #b1faff28;
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            text-align: justify;
-            color: #333; }
-        header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 15px 0;
-            background: linear-gradient(to right, #00b4c1, #00eaf2);
-            color: white; }
-        header img {
-            width: 64px;
-            margin-left: 15px;
-            border-radius: 8px; }
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px; }
-        h1 {
-            text-align: center;
-            font-size: 2em;
-            margin: 0; }
-        main {
-            max-width: 1150px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 0 10px #0000001a;
-            border-radius: 8px; }
-        section {
-            margin-bottom: 20px; }
-        h2 {
-            background-color: #e0e0e0;
-            padding: 10px;
-            border-left: 5px solid #232323;
-            cursor: pointer; }
-        h2:hover {
-            transition: transform 0.1s ease-in-out;
-            transform: scale(1.01); }
-        .collapsible-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-in-out; }
-        section p {
-            margin: 20px auto;
-            max-width: 80%;
-            color: #333; }
-        section h3 {
-            margin: 10px 0;
-            text-indent: 20px; }
-        footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 60px;
-            background-color: #232323ce;
-            text-align: center;
-            color: white;
-            font-size: 0.9em; }
-        .map-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 20px; }
-        .map-item {
-            flex: 1 1 45%;
-            text-align: center; }
-        .map-item img {
-            width: 100%;
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); }
-        .info-layer table td {
-            padding: 5px;
-            text-align: left; }
-        .legend-container {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            margin-top: 0;
-            margin-bottom: 20px;
-            margin-left: 0;
-            background: #f2f2f2;
-            padding: 12px 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px 0 #2c2c2c1a;
-            max-width: 220px;
-            font-size: 1em; }
-        .legend-container strong {
-            margin-bottom: 8px;
-            color: #333; }
-        .legend-item {
-            display: flex;
-            align-items: center;
-            margin: 4px 0;
-            gap: 8px; }
-        .legend-color {
-            display: inline-block;
-            width: 28px;
-            height: 18px;
-            border-radius: 3px;
-            border: 1px solid #999;
-            margin-right: 10px; }
-        .textos {
-            margin: 20px auto;
-            max-width: 80%;
-            color: #333; }
-        .textos p {
-            margin-bottom: 16px; }
-        .textos h3 {
-            text-align: center;
-            margin-bottom: 16px; }
-        .textos ul {
-            list-style-position: inside;
-            padding-left: 0;
-            margin-bottom: 16px; }
-        .textos li {
-            margin-bottom: 16px; }
-
+    body {
+        background-color: #b1faff28;
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        text-align: justify;
+        color: #333; }
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 0;
+        background: linear-gradient(to right, #00b4c1, #00eaf2);
+        color: white; }
+    header img {
+        width: 64px;
+        margin-left: 15px;
+        border-radius: 8px; }
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px; }
+    h1 {
+        text-align: center;
+        font-size: 2em;
+        margin: 0; }
+    main {
+        max-width: 1150px;
+        margin: 20px auto;
+        padding: 20px;
+        background: white;
+        box-shadow: 0 0 10px #0000001a;
+        border-radius: 8px; }
+    section {
+        margin-bottom: 20px; }
+    .section-with-image {
+        display: flex;
+        gap: 18px;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;}
+    .section-with-image .textos {
+        flex: 1 1 60%;
+        max-width: 65%;}
+    .section-with-image .side-image {
+        flex: 0 0 28%;
+        max-width: 28%;
+        display: flex;
+        justify-content: flex-end; }
+    .section-with-image .side-image.multiple {
+        flex-direction: column;
+        gap: 100px;
+        align-items: flex-end; }
+    .section-with-image .side-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+    @media (max-width: 600px) {
+        .section-with-image { flex-direction: column; }
+        .section-with-image .textos, .section-with-image .side-image { flex: 1 1 100%; max-width: 100%; }
+        section p { max-width: 100%; } }
+    h2 {
+        background-color: #e6eaeb;
+        padding: 10px;
+        border-left: 5px solid #232323;
+        cursor: pointer;
+        border-radius: 8px 8px 0 0;
+        margin: 0 0 6px 0; }
+    h2:hover {
+        transition: transform 0.1s ease-in-out;
+        transform: scale(1.01); }
+    .collapsible-content {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0;
+        opacity: 0;
+        background: transparent;
+        border-radius: 0;
+        transition: max-height 0.45s ease-in-out, opacity 0.25s ease-in-out, padding 0.25s ease-in-out; }
+    .collapsible-content.expanded {
+        opacity: 1;
+        padding: 16px;
+        background: #f5f6f7;
+        border-radius: 0 0 32px 32px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.283); }
+    .collapsible-content .textos > * {
+        opacity: 0;
+        transform: translateY(8px);
+        transition: opacity 320ms ease, transform 320ms ease; }
+    .collapsible-content.expanded .textos > * {
+        opacity: 1;
+        transform: translateY(0); }
+    .collapsible-content .side-image img {
+        opacity: 0;
+        transform: translateY(6px) scale(.98);
+        transition: opacity 340ms ease, transform 340ms ease; }
+    .collapsible-content.expanded .side-image img {
+        opacity: 1;
+        transform: translateY(0) scale(1); }
+    .collapsible-content.expanded .side-image.multiple img:nth-child(1) { transition-delay: 60ms; }
+    .collapsible-content.expanded .side-image.multiple img:nth-child(2) { transition-delay: 120ms; }
+    .collapsible-content.expanded .side-image.multiple img:nth-child(3) { transition-delay: 180ms; }
+    section p {
+        margin: 20px auto;
+        max-width: 80%;
+        color: #333; }
+    section h3 {
+        margin: 10px 0;
+        text-indent: 20px; }
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background-color: #232323ce;
+        text-align: center;
+        color: white;
+        font-size: 0.9em; }
+    .map-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 20px; }
+    .map-item {
+        flex: 1 1 45%;
+        text-align: center; }
+    .map-item img,
+    .section-with-image .side-image img,
+    .section-with-image .side-image.multiple img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        will-change: transform, opacity;
+        transition: transform 460ms cubic-bezier(.2,.9,.2,1), box-shadow 280ms ease, opacity 360ms ease; }
+    .info-layer table td {
+        padding: 5px;
+        text-align: left; }
+    .legend-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 0;
+        margin-bottom: 20px;
+        margin-left: 0;
+        background: #f2f2f2;
+        padding: 12px 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px 0 #00000070;
+        max-width: 220px;
+        font-size: 1em; }
+    .legend-container strong {
+        margin-bottom: 8px;
+        color: #000000; }
+    .legend-item {
+        display: flex;
+        align-items: center;
+        margin: 4px 0;
+        gap: 8px; }
+    .legend-color {
+        display: inline-block;
+        width: 28px;
+        height: 18px;
+        border-radius: 3px;
+        border: 1px solid #999;
+        margin-right: 10px; }
+    .textos {
+        margin: 20px auto;
+        max-width: 80%;
+        color: #333; }
+    .textos p {
+        margin-bottom: 16px; }
+    .textos h3 {
+        text-align: center;
+        margin-bottom: 16px; }
+    .textos ul {
+        list-style-position: inside;
+        padding-left: 0;
+        margin-bottom: 16px; }
+    .textos li {
+        margin-bottom: 16px; }
 </style>
 </head>
 <body>
  
 <header>
-
-<div class='header-container'>
-    <h1>Ruído Zero: Investigação Científica</h1>
-    <img src='https://i.pinimg.com/736x/d0/3b/58/d03b5862680907ad891f10d26e216cbe.jpg' alt='Ruído-Zero_Logotipo'>
-</div>
-
+    <div class='header-container'>
+        <h1>Ruído Zero: Investigação Científica</h1>
+        <img src='https://i.pinimg.com/736x/d0/3b/58/d03b5862680907ad891f10d26e216cbe.jpg' alt='Ruído-Zero_Logotipo'>
+    </div>
 </header>
 
 <main>
-
     <section> 
         <h2 onclick='toggleContent(this)'>Tema da Pesquisa</h2>
         <div class='collapsible-content'>
-            <div class="textos">
-                <p>Esta pesquisa científica feita pelos alunos Jhonatan Orlandi, Heitor Cavalcanti, Diego Camilo, Renato Dias, Thiago Alves e auxiliada pelos professores Lucas Moura e Mayara Jordano do Senac Lapa Tito busca investigar sobre os impactos na saúde da poluição sonora no centro de São Paulo, utilizando um mapa feito pelo INAD SP para também entrar mais a fundo no qual grave é a proporção desse problema na nossa região. De acordo com a Organização Mundial da Saúde (OMS) a poluição sonora é o segundo maior agente poluidor ambiental, ficando somente atrás da poluição do ar.</p>
+            <div class='section-with-image'>
+                <div class='textos'>
+                    <p>Esta pesquisa científica feita pelos alunos Jhonatan Orlandi, Heitor Cavalcanti, Diego Camilo, Renato Dias, Thiago Alves e auxiliada pelos professores Lucas Moura e Mayara Jordano do Senac Lapa Tito busca investigar sobre os impactos na saúde da poluição sonora no centro de São Paulo, utilizando um mapa feito pelo INAD SP para também entrar mais a fundo no qual grave é a proporção desse problema na nossa região. De acordo com a Organização Mundial da Saúde (OMS) a poluição sonora é o segundo maior agente poluidor ambiental, ficando somente atrás da poluição do ar.</p>
+                </div>
+                <div class='side-image'>
+                    <img src='https://github.com/Jhonatan-Orlandi-de-Abrantes/Poluicao-Sonora/blob/main/Media.jpg?raw=true' alt='Integrantes do projeto'>
+                </div>
             </div>
         </div>
     </section>
@@ -163,15 +226,22 @@
     <section>
         <h2 onclick='toggleContent(this)'>Introdução</h2>
         <div class='collapsible-content'>
-            <div class="textos">
-                <h3>Definição de poluição sonora</h3>
-                <p>A definição científica da poluição sonora pode ser definida como toda energia lançada no meio ambiente, incluindo aquela sob a forma de som, que extrapole os limites estabelecidos pelos padrões e que considera que os níveis superiores aos estabelecidos naquela área são prejudiciais à saúde e ao sossego público.</p>
+            <div class='section-with-image'>
+                <div class='side-image multiple'>
+                    <img src='https://neomondo.org.br/wp-content/uploads/2018/08/congestionamento-em-sao-paulo-neo-mondo-e1559743784611.jpg' alt='Imagem' onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Imagem+1';">
+                    <img src='https://ichef.bbci.co.uk/news/800/cpsprodpb/0163/production/_117855300_foto_02.jpg' alt='Imagem' onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Imagem+2';">
+                    <img src='https://tse3.mm.bing.net/th/id/OIP.5HoLInpue50CMkgP9Bz8vwHaE8?w=1440&h=960&rs=1&pid=ImgDetMain&o=7&rm=3' alt='Imagem' onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Imagem+3';">
+                </div>
+                <div class='textos'>
+                    <h3>Definição de poluição sonora</h3>
+                    <p>A definição científica da poluição sonora pode ser definida como toda energia lançada no meio ambiente, incluindo aquela sob a forma de som, que extrapole os limites estabelecidos pelos padrões e que considera que os níveis superiores aos estabelecidos naquela área são prejudiciais à saúde e ao sossego público.</p>
           
-                <h3>Método científico, principal pergunta e hipótese</h3>
-                <p>Em nossa busca, utilizamos o debate bibliográfico, um método científico que utiliza a análise e discussão de textos existentes sobre um tema específico para responder a uma pergunta de pesquisa, desenvolver um argumento ou apresentar novas perspectivas sobre um assunto. Nossa principal pergunta é: Como a poluição sonora pode afetar diretamente e indiretamente a nossa saúde? Após pensarmos um pouco em equipe concluímos a seguinte hipótese: a poluição sonora pode nos afetar desenvolvendo problemas de saúde e/ou intensificando os já existentes, e que ela pode fazer isso de forma indireta, como por exemplo, nos levando ao cansaço e ao estresse, assim, piorando nosso estar mental e nos deixando mais propensos a termos problemas como insônia e ansiedade por exemplo.</p>
-                
-                <h3>Conclusão</h3>
-                <p>Ao pesquisarmos sobre impactos na saúde causados pela poluição sonora, descobrimos que a exposição a ela pode causar diferentes efeitos negativos na saúde do ser humano, tanto no campo físico quanto no mental. Alguns deles são o distúrbio no sono, o estresse, a irritabilidade, os distúrbios psicológicos, os zumbidos, as dificuldades na concentração e até mesmo dores de cabeça.</p>
+                    <h3>Método científico, principal pergunta e hipótese</h3>
+                    <p>Em nossa busca, utilizamos o debate bibliográfico, um método científico que utiliza a análise e discussão de textos existentes sobre um tema específico para responder a uma pergunta de pesquisa, desenvolver um argumento ou apresentar novas perspectivas sobre um assunto. Nossa principal pergunta é: Como a poluição sonora pode afetar diretamente e indiretamente a nossa saúde? Após pensarmos um pouco em equipe concluímos a seguinte hipótese: a poluição sonora pode nos afetar desenvolvendo problemas de saúde e/ou intensificando os já existentes, e que ela pode fazer isso de forma indireta, como por exemplo, nos levando ao cansaço e ao estresse, assim, piorando nosso estar mental e nos deixando mais propensos a termos problemas como insônia e ansiedade por exemplo.</p>
+                    
+                    <h3>Conclusão</h3>
+                    <p>Ao pesquisarmos sobre impactos na saúde causados pela poluição sonora, descobrimos que a exposição a ela pode causar diferentes efeitos negativos na saúde do ser humano, tanto no campo físico quanto no mental. Alguns deles são o distúrbio no sono, o estresse, a irritabilidade, os distúrbios psicológicos, os zumbidos, as dificuldades na concentração e até mesmo dores de cabeça.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -179,7 +249,7 @@
     <section>
         <h2 onclick='toggleContent(this)'>Impacto ambiental e prevenção</h2>
         <div class='collapsible-content'>
-            <div class="textos">
+            <div class='textos'>
                 <h3>Formas de denúncia</h3>
                 <p>Na maioria dos casos, seja de um estabelecimento ou locais comerciais, um dos responsáveis são o Programa Silêncio Urbano (PSIU), da Prefeitura de São Paulo. Mas detalhe crucial: O PSIU não fiscaliza barulho de residências, apenas locais comerciais e obras particulares. Também é possível constatar o Ministério Público, se for algo grave e recorrente.</p>
                 <p>Como denunciar:</p>
@@ -214,7 +284,7 @@
     <section>
         <h2 onclick='toggleContent(this)'>Mapa</h2>
         <div class='collapsible-content'>
-            <div class="textos">
+            <div class='textos'>
                 <p>Os mapas a seguir demonstram as taxas de decibéis na região do centro de São Paulo, de dia e de noite:</p>
             </div>
             <div class='map-container'>
@@ -267,16 +337,18 @@
  
 <script>
     function toggleContent(element) {
-    const content = element.nextElementSibling;
+        const content = element.nextElementSibling;
 
-    if (content.style.maxHeight) {
-        content.style.maxHeight = null;
-    } else {
-        content.style.maxHeight = content.scrollHeight + 'px';
-
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-}
+        if (content.classList.contains('expanded')) {
+            content.style.maxHeight = null;
+            content.classList.remove('expanded');
+            content.querySelectorAll('img').forEach(img => img.style.visibility = 'hidden');
+        } else {
+            content.querySelectorAll('img').forEach(img => img.style.visibility = 'hidden');
+            content.style.maxHeight = content.scrollHeight + 'px';
+            content.classList.add('expanded');
+            setTimeout(() => content.querySelectorAll('img').forEach(img => img.style.visibility = 'visible'), 220);
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }
 </script>
  
 </html>
