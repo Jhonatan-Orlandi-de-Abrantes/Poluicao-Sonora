@@ -1,129 +1,290 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Ruído Zero — Investigação Científica</title>
-  <meta name="description" content="Investigação científica sobre os impactos da poluição sonora no centro de São Paulo. Mapas, métodos e referências para análise de riscos à saúde.">
-  <meta property="og:title" content="Ruído Zero — Investigação Científica">
-  <meta property="og:description" content="Investigação científica sobre os impactos da poluição sonora no centro de São Paulo.">
-  <meta property="og:type" content="article">
-  <meta property="og:locale" content="pt_BR">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#f4fbfc;
-      --card:#ffffff;
-      --muted:#6b7280;
-      --accent-1:#007a8a;
-      --accent-2:#00d9e6;
-      --glass: rgba(255,255,255,0.6);
-      --radius:14px; }
-    *{box-sizing:border-box}
-    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Poppins', sans-serif; background:linear-gradient(180deg,var(--bg),#eefcff 120%); margin:0; color:#123;}
-    header{display:flex;align-items:center;gap:18px;padding:28px 32px;background:linear-gradient(90deg,var(--accent-1),var(--accent-2));color:white}
-    header h1{font-size:1.4rem;margin:0;font-weight:700}
-    header .logo{width:256px;height:56px;object-fit:cover;}
-
-    .container{max-width:1100px;margin:28px auto;padding:20px}
-    .hero{display:grid;grid-template-columns:1fr 320px;gap:22px;align-items:center;margin-bottom:20px}
-    .hero .lead{background:var(--card);padding:22px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(3,27,34,0.06)}
-    .hero .lead h2{margin-top:0}
-    .hero .stats{display:flex;flex-direction:column;gap:12px}
-    .card{background:var(--card);border-radius:12px;padding:16px;box-shadow:0 6px 18px rgba(8,24,32,0.06)}
-
-    .section{margin-bottom:18px}
-    .section h2{margin:0;padding:12px 16px;background:linear-gradient(90deg,#f2f7f8,#ffffff);border-radius:12px;font-size:1.05rem;border-left:6px solid var(--accent-1);cursor:pointer}
-    .section .content{max-height:0;overflow:hidden;transition:max-height .55s cubic-bezier(.2,.9,.2,1),opacity .28s ease,padding .22s ease}
-    .section .content.open{padding:18px;margin-top:8px;opacity:1;}
-
-    .flex-row{display:flex;gap:18px;flex-wrap:wrap}
-    .text-block{flex:1 1 60%;min-width:290px}
-    .side-block{flex:0 0 32%;min-width:220px;display:flex;flex-direction:column;gap:18px;align-items:flex-end;perspective:1200px}
-
-    .media{width:100%;border-radius:10px;display:block;box-shadow:0 8px 22px rgba(4,22,29,0.06);overflow:hidden}
-    .media img{display:block;width:100%;height:auto}
-
-    .media figure{margin:0}
-    .media .img-wrap{border-radius:10px;overflow:hidden;transform-style:preserve-3d;backface-visibility:hidden}
-    .media .img-wrap img{width:100%;height:auto;display:block;transform:translateY(12px) rotateX(8deg) scale(.96);opacity:0;transition:transform .48s cubic-bezier(.2,.9,.2,1),opacity .36s ease,box-shadow .28s ease}
-    .content.open .media .img-wrap img{transform:translateY(0) rotateX(0) scale(1);opacity:1}
-    .media .img-wrap img:hover{transform:translateY(-8px) rotateY(8deg) rotateX(4deg) scale(1.03);box-shadow:0 18px 40px rgba(3,27,34,0.12)}
-    
-    .stacked img:nth-child(1){transition-delay:.06s}
-    .stacked img:nth-child(2){transition-delay:.12s}
-    .stacked img:nth-child(3){transition-delay:.18s}
-
-    .map-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-
-    @media (max-width:900px){.hero{grid-template-columns:1fr}.side-block{align-items:center}}
-    @media (max-width:640px){.map-grid{grid-template-columns:1fr}.side-block{order:2}}
-
-    footer{margin-top:24px;padding:18px;text-align:center;color:var(--muted);font-size:0.92rem}
-
-    .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
-    .skip-link:focus{position:fixed;left:16px;top:16px;width:auto;height:auto;padding:8px 12px;background:#00282b;color:#fff;border-radius:6px;z-index:9999}
-    h2:focus-visible{outline:3px solid var(--accent-1);outline-offset:4px;border-radius:8px}
-
-    @media (prefers-reduced-motion: reduce){
-      *{transition:none!important;animation:none!important} }
-
-    .muted{color:var(--muted)}
-    a{color:var(--accent-1)}
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Ruído Zero — Investigação Científica</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+<style>
+:root {
+	--bg: #f4fbfc;
+	--card: #ffffff;
+	--muted: #6b7280;
+	--accent-1: #007a8a;
+	--accent-2: #00d9e6;
+	--glass: rgba(255, 255, 255, 0.6);
+	--radius: 14px;
+}
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Poppins', sans-serif;
+	background: linear-gradient(180deg, var(--bg), #eefcff 120%);
+	margin: 0;
+	color: #123;
+}
+header {
+	display: flex;
+	align-items: center;
+	gap: 18px;
+	padding: 28px 32px;
+	background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+	color: white;
+}
+header h1 {
+	font-size: 1.4rem;
+	margin: 0;
+	font-weight: 700;
+}
+header .logo {
+	width: 256px;
+	height: 56px;
+	object-fit: cover;
+}
+.container {
+	max-width: 1100px;
+	margin: 28px auto;
+	padding: 20px;
+}
+.hero {
+	display: grid;
+	grid-template-columns: 1fr 320px;
+	gap: 22px;
+	align-items: center;
+	margin-bottom: 20px;
+}
+.hero .lead {
+	background: var(--card);
+	padding: 22px;
+	border-radius: var(--radius);
+	box-shadow: 0 8px 30px rgba(3, 27, 34, 0.06);
+}
+.hero .lead h2 {
+	margin-top: 0;
+}
+.hero .stats {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+.card {
+	background: var(--card);
+	border-radius: 12px;
+	padding: 16px;
+	box-shadow: 0 6px 18px rgba(8, 24, 32, 0.06);
+}
+.section {
+	margin-bottom: 18px;
+}
+.section h2 {
+	margin: 0;
+	padding: 12px 16px;
+	background: linear-gradient(90deg, #ffffff, #f2f7f8);
+	border-radius: 12px;
+	font-size: 1.05rem;
+	border-left: 6px solid var(--accent-1);
+	cursor: pointer;
+}
+.section .content {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.55s cubic-bezier(0.2, 0.9, 0.2, 1), opacity 0.28s ease, padding 0.22s ease;
+	opacity: 0;
+	padding: 0 16px;
+}
+.section .content.open {
+	padding: 18px 16px;
+	margin-top: 8px;
+	opacity: 1;
+	max-height: 2000px;
+}
+.flex-row {
+	display: flex;
+	gap: 18px;
+	flex-wrap: wrap;
+}
+.text-block {
+	flex: 1 1 60%;
+	min-width: 290px;
+}
+.side-block {
+	flex: 0 0 32%;
+	min-width: 220px;
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+	align-items: flex-end;
+	perspective: 1200px;
+}
+.media {
+	width: 100%;
+	border-radius: 10px;
+	display: block;
+	box-shadow: 0 8px 22px rgba(4, 22, 29, 0.06);
+	overflow: hidden;
+}
+.media img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.media figure {
+	margin: 0;
+}
+.media .img-wrap {
+	border-radius: 10px;
+	overflow: hidden;
+	transform-style: preserve-3d;
+	backface-visibility: hidden;
+}
+.media .img-wrap img {
+	width: 100%;
+	height: auto;
+	display: block;
+	transform: translateY(12px) rotateX(8deg) scale(0.96);
+	opacity: 0;
+	transition: transform 0.48s cubic-bezier(0.2, 0.9, 0.2, 1), opacity 0.36s ease, box-shadow 0.28s ease;
+}
+.content.open .media .img-wrap img {
+	transform: translateY(0) rotateX(0) scale(1);
+	opacity: 1;
+}
+.media .img-wrap img:hover {
+	transform: translateY(-8px) rotateY(8deg) rotateX(4deg) scale(1.03);
+	box-shadow: 0 18px 40px rgba(3, 27, 34, 0.12);
+}
+.stacked img:nth-child(1) {
+	transition-delay: 0.06s;
+}
+.stacked img:nth-child(2) {
+	transition-delay: 0.12s;
+}
+.stacked img:nth-child(3) {
+	transition-delay: 0.18s;
+}
+.map-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 14px;
+}
+@media (max-width: 900px) {
+	.hero {
+		grid-template-columns: 1fr;
+	}
+	.side-block {
+		align-items: center;
+	}
+}
+@media (max-width: 640px) {
+	.map-grid {
+		grid-template-columns: 1fr;
+	}
+	.side-block {
+		order: 2;
+	}
+}
+footer {
+	margin-top: 24px;
+	padding: 18px;
+	text-align: center;
+	color: var(--muted);
+	font-size: 0.92rem;
+}
+.skip-link {
+	position: absolute;
+	left: -999px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+.skip-link:focus {
+	position: fixed;
+	left: 16px;
+	top: 16px;
+	width: auto;
+	height: auto;
+	padding: 8px 12px;
+	background: #00282b;
+	color: #fff;
+	border-radius: 6px;
+	z-index: 9999;
+}
+h2:focus-visible {
+	outline: 3px solid var(--accent-1);
+	outline-offset: 4px;
+	border-radius: 8px;
+}
+@media (prefers-reduced-motion: reduce) {
+	* {
+		transition: none !important;
+		animation: none !important;
+	}
+}
+.muted {
+	color: var(--muted);
+}
+a {
+	color: var(--accent-1);
+}
+</style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Ir para o conteúdo</a>
-  <header>
-    <img class="logo" src="https://github.com/Jhonatan-Orlandi-de-Abrantes/Poluicao-Sonora/blob/main/logotipo.png?raw=true" alt="logotipo" width="1024" height="225">
-  </header>
+<a class="skip-link" href="#main">Ir para o conteúdo</a>
+<header>
+	<img
+		class="logo"
+		src="https://github.com/Jhonatan-Orlandi-de-Abrantes/Poluicao-Sonora/blob/main/logotipo.png?raw=true"
+		alt="logotipo"
+		width="256"
+		height="56"
+	/>
+</header>
 
-  <main id="main" class="container">
-    <section class="hero">
-      <div class="lead">
-        <h2>Objetivo da investigação</h2>
-        <p>Esta pesquisa científica feita pelos alunos Jhonatan Orlandi, Heitor Cavalcanti, Diego Camilo, Renato Dias, Thiago Alves e auxiliada pelos professores Lucas Moura e Mayara Jordano do Senac Lapa Tito investiga os impactos na saúde da poluição sonora no centro de São Paulo. Utilizamos mapas oficiais do INAD SP para quantificar a exposição sonora e relacioná-la a riscos à saúde.</p>
-      </div>
-      <aside class="stats card">
-        <h3 style="margin:0 0 6px 0">Resumo</h3>
-        <p class="muted" style="margin:0 0 10px 0">Principais achados</p>
-        <ul style="margin:0 0 0 18px;padding:0">
-          <li>Poluição sonora é fator de risco para sono e saúde mental</li>
-          <li>Centros urbanos apresentam níveis críticos</li>
-          <li>Denúncias via PSIU e SP156</li>
-        </ul>
-      </aside>
-    </section>
+<main id="main" class="container">
+	<section class="hero">
+		<div class="lead">
+			<h2>Objetivo da investigação</h2>
+			<p>
+				Esta pesquisa científica feita pelos alunos Jhonatan Orlandi, Heitor Cavalcanti, Diego
+				Camilo, Renato Dias, Thiago Alves e auxiliada pelos professores Lucas Moura e Mayara Jordano do
+				Senac Lapa Tito investiga os impactos na saúde da poluição sonora no centro de São Paulo.
+				Utilizamos mapas oficiais do INAD SP para quantificar a exposição sonora e relacioná-la a riscos à
+				saúde.
+			</p>
+		</div>
+		<aside class="stats card">
+			<h3 style="margin: 0 0 6px 0">Resumo</h3>
+			<p class="muted" style="margin: 0 0 10px 0">Principais achados</p>
+			<ul style="margin: 0 0 0 18px; padding: 0">
+				<li>Poluição sonora é fator de risco para sono e saúde mental</li>
+				<li>Centros urbanos apresentam níveis críticos</li>
+				<li>Denúncias via PSIU e SP156</li>
+			</ul>
+		</aside>
+	</section>
 
-    <article class="section">
-      <h2 tabindex="0" role="button" aria-expanded="false" onclick="toggle(this)">Tema da Pesquisa</h2>
-      <div class="content card">
-        <div class="flex-row">
-          <div class="text-block">
-            <p>Esta pesquisa científica feita pelos alunos Jhonatan Orlandi, Heitor Cavalcanti, Diego Camilo, Renato Dias, Thiago Alves e auxiliada pelos professores Lucas Moura e Mayara Jordano do Senac Lapa Tito busca investigar sobre os impactos na saúde da poluição sonora no centro de São Paulo, utilizando um mapa feito pelo INAD SP para também entrar mais a fundo no qual grave é a proporção desse problema na nossa região. De acordo com a Organização Mundial da Saúde (OMS) a poluição sonora é o segundo maior agente poluidor ambiental, ficando somente atrás da poluição do ar.</p>
-          </div>
-          <aside class="side-block">
-            <div class="media">
-              <figure class="img-wrap"><img loading="lazy" src="https://github.com/Jhonatan-Orlandi-de-Abrantes/Poluicao-Sonora/blob/main/Media.jpg?raw=true" alt="Integrantes do projeto" onerror="this.onerror=null;this.src='https://via.placeholder.com/420x280?text=Integrantes';"></figure>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </article>
+	<article class="section">
+		<h2 tabindex="0" role="button" aria-expanded="false" onclick="toggle(this)">Tema da Pesquisa</h2>
+		<div class="content card">
+			<div class="flex-row">
+				<div class="text-block">
+					<p>Esta pesquisa científica feita pelos alunos Jhonatan Orlandi, Heitor Cavalcanti, Diego Camilo, Renato Dias, Thiago Alves e auxiliada pelos professores Lucas Moura e Mayara Jordano do Senac Lapa Tito busca investigar sobre os impactos na saúde da poluição sonora no centro de São Paulo, utilizando um mapa feito pelo INAD SP para também entrar mais a fundo no qual grave é a proporção desse problema na nossa região. De acordo com a Organização Mundial da Saúde (OMS) a poluição sonora é o segundo maior agente poluidor ambiental, ficando somente atrás da poluição do ar.</p>
+				</div>
+				<aside class="side-block">
+					<div class='media'>
+                        <figure class='img-wrap'><img loading='lazy' src='https://github.com/Jhonatan-Orlandi-de-Abrantes/Poluicao-Sonora/blob/main/Media.jpg?raw=true' alt='Integrantes do projeto'></figure>
+                    </div>
+				</aside>
+			</div>
+		</div>
+	</article>
 
-    <article class="section">
-      <h2 tabindex="0" role="button" aria-expanded="false" onclick="toggle(this)">Introdução</h2>
-      <div class="content card">
-        <div class="flex-row">
-          <aside class="side-block">
-            <div class="media stacked">
-              <figure class="img-wrap"><img loading="lazy" src="https://neomondo.org.br/wp-content/uploads/2018/08/congestionamento-em-sao-paulo-neo-mondo-e1559743784611.jpg" alt="Imagem 1" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=1';"></figure>
-              <figure class="img-wrap"><img loading="lazy" src="https://ichef.bbci.co.uk/news/800/cpsprodpb/0163/production/_117855300_foto_02.jpg" alt="Imagem 2" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=2';"></figure>
-              <figure class="img-wrap"><img loading="lazy" src="https://tse3.mm.bing.net/th/id/OIP.5HoLInpue50CMkgP9Bz8vwHaE8?w=1440&h=960&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Imagem 3" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=3';"></figure>
-            </div>
-          </aside>
-          <div class="text-block">
-            <h3>Definição de poluição sonora</h3>
+	<article class="section">
+		<h2 tabindex="0" role="button" aria-expanded="false" onclick="toggle(this)">Introdução</h2>
+		<div class="content card">
+			<h3>Definição de poluição sonora</h3>
             <p>A definição científica da poluição sonora pode ser definida como toda energia lançada no meio ambiente, incluindo aquela sob a forma de som, que extrapole os limites estabelecidos pelos padrões e que considera que os níveis superiores aos estabelecidos naquela área são prejudiciais à saúde e ao sossego público.</p>
 
             <h3>Método científico, principal pergunta e hipótese</h3>
@@ -131,96 +292,124 @@
 
             <h3>Conclusão</h3>
             <p>Ao pesquisarmos sobre impactos na saúde causados pela poluição sonora, descobrimos que a exposição a ela pode causar diferentes efeitos negativos na saúde do ser humano, tanto no campo físico quanto no mental. Alguns deles são o distúrbio no sono, o estresse, a irritabilidade, os distúrbios psicológicos, os zumbidos, as dificuldades na concentração e até mesmo dores de cabeça.</p>
-          </div>
         </div>
-      </div>
-    </article>
+	</article>
 
-    <article class="section">
-      <h2 tabindex="0" role="button" aria-expanded="false" onclick="toggle(this)">Impacto ambiental e prevenção</h2>
-      <div class="content card">
-        <div class="text-block">
-          <h3>Formas de denúncia</h3>
+	<article class="section">
+		<h2 tabindex="0" role="button" aria-expanded="false" onclick="toggle(this)">Mais Informações</h2>
+		<div class="content card">
+			<h3>Formas de denúncia</h3>
           <p>Na maioria dos casos, seja de um estabelecimento ou locais comerciais, um dos responsáveis são o Programa Silêncio Urbano (PSIU), da Prefeitura de São Paulo. Mas detalhe crucial: O PSIU não fiscaliza barulho de residências, apenas locais comerciais e obras particulares. Também é possível constatar o Ministério Público, se for algo grave e recorrente.</p>
           <p>Como denunciar:</p>
           <ul>
             <li>Ligue para o telefone 156</li>
-            <li><a href="https://prefeitura.sp.gov.br/web/subprefeituras/w/zeladoria/psiu/8831/">Acesse o Portal SP156</a></li>
+            <li><a href='https://prefeitura.sp.gov.br/web/subprefeituras/w/zeladoria/psiu/8831/'>Acesse o Portal SP156</a></li>
             <li>Para casos pequenos como residências e condomínios (vizinhos, festas, som alto), não há uma fiscalização direta pela prefeitura.</li>
             <li>Primeiro, tente resolver com o síndico (em condomínios)</li>
             <li>Se não resolver, acione a Polícia Militar (<b>190</b>) em casos mais graves.</li>
             <li>Você pode contatar o IBAMA – Linha Verde: quando envolve impacto maior em animais e meio ambiente pelo número <b>0800 61 8080</b></li>
           </ul>
-        </div>
-      </div>
-    </article>
+    
+          <h3>Tipos de Poluição Sonora</h3>
+          <ul>
+            <li><b>Tráfego de veículos:</b> Veículos em movimento e/ou trânsito. Ocorrendo principalmente em partes urbanas.</li>
+            <li><b>Atividades industriais e construções:</b> Equipamentos industriais como serralheria, construções etc. Geram níveis elevados de ruído, para quem trabalha ou mora próximo.</li>
+            <li><b>Atividades aeroportuárias:</b> O ruído de aeronaves decolando ou pousando etc. que atrapalha quem mora próximo de aeroportos.</li>
+            <li><b>Eventos sociais:</b> Shows de bandas, festas etc. Causam incômodo para as pessoas próximas.</li>
+          </ul>
 
-    <article class="section">
-      <h2 tabindex="0" role="button" aria-expanded="false" onclick="toggle(this)">Mapa</h2>
-      <div class="content card">
-        <p>Os mapas a seguir demonstram as taxas de decibéis na região do centro de São Paulo, de dia e de noite:</p>
-        <div class="map-grid">
-          <div class="card">
-            <h4 style="margin:0 0 8px 0">Mapa de Ruído: Dia</h4>
-            <div class="media"><figure class="img-wrap"><img loading="lazy" src="https://www.mapaderuidosp.org.br/wp-content/uploads/2019/04/Mapa-Centro-SP-2019-Dia.jpg" alt="Mapa Dia" onerror="this.onerror=null;this.src='https://via.placeholder.com/640x420?text=Mapa+Dia';"></figure></div>
+          <h3>Como isso afeta os animais</h3>
+          <p>A poluição sonora também prejudica bastante os animais, não só os seres humanos. Muitos bichos dependem do som para se comunicar, caçar, fugir de predadores e até para se reproduzir. Quando o ambiente está cheio de barulho causado por carros, fábricas, fogos de artifício ou navios, isso atrapalha o jeito natural deles viverem.</p>
+          <p>Os animais podem ficar estressados, confusos, perder o instinto de se orientar e até abandonar lugares onde costumavam viver. Em alguns casos, como com as baleias e golfinhos, o excesso de barulho no mar pode causar até ferimentos sérios ou a morte. Até os pássaros nas cidades mudam o canto por causa do barulho, o que dificulta a reprodução. Por isso, a poluição sonora é um problema real para os animais e pode colocar em risco a sobrevivência de muitas espécies.</p>
+
+          <h3>Como afeta os idosos</h3>
+          <p>O ruído constante de carros, buzinas, obras, festas e até eletrodomésticos não é só perturbador: ele prejudica a qualidade de vida de quem já lida com os desafios do envelhecimento. Para muitos idosos, a audição já está naturalmente mais frágil, e o excesso de ruídos agrava a perda auditiva, dificultando a comunicação e afastando-os das interações sociais.</p>
+          <p>Porém, os prejuízos não se limitam a isso. O excesso de ruído causa estresse, eleva a pressão arterial e pode levar à insônia — elementos que agravam doenças cardiovasculares e neurológicas, frequentes nessa faixa etária. Ademais, o idoso exposto a ruídos constantes pode desenvolver ansiedade, irritabilidade e até depressão, pois o descanso e a sensação de calma se tornam quase inalcançáveis.</p>
+        </div>
+	</article>
+
+	<article class="section">
+		<h2 tabindex="0" role="button" aria-expanded="false" onclick="toggle(this)">Mapa</h2>
+		<div class="content card">
+			<p>Os mapas a seguir demonstram as taxas de decibéis na região do centro de São Paulo, de dia e de noite:</p>
+        <div class='map-grid'>
+          <div class='card'>
+            <h4 style='margin:0 0 8px 0'>Mapa de Ruído: Dia</h4>
+            <div class='media'><figure class='img-wrap'><img loading='lazy' src='https://www.mapaderuidosp.org.br/wp-content/uploads/2019/04/Mapa-Centro-SP-2019-Dia.jpg' alt='Mapa Dia' onerror='this.onerror=null;this' src='https://via.placeholder.com/640x420?text=Mapa+Dia'></figure></div>
           </div>
-          <div class="card">
-            <h4 style="margin:0 0 8px 0">Mapa de Ruído: Noite</h4>
-            <div class="media"><figure class="img-wrap"><img loading="lazy" src="https://www.mapaderuidosp.org.br/wp-content/uploads/2019/04/Mapa-Centro-SP-2019-Noite.jpg" alt="Mapa Noite" onerror="this.onerror=null;this.src='https://via.placeholder.com/640x420?text=Mapa+Noite';"></figure></div>
+          <div class='card'>
+            <h4 style='margin:0 0 8px 0'>Mapa de Ruído: Noite</h4>
+            <div class='media'><figure class='img-wrap'><img loading='lazy' src='https://www.mapaderuidosp.org.br/wp-content/uploads/2019/04/Mapa-Centro-SP-2019-Noite.jpg' alt='Mapa Noite' onerror='this.onerror=null;this' src='https://via.placeholder.com/640x420?text=Mapa+Noite'></figure></div>
           </div>
         </div>
 
-        <div class="legend-container card" style="margin-top:14px">
+        <div class='legend-container card' style='margin-top:14px'>
           <strong>Legenda do mapa:</strong>
-          <div style="display:flex;gap:8px;align-items:center;margin-top:6px"><span style="width:28px;height:18px;background:#bec718;border-radius:4px;display:inline-block"></span><span>> 45.0 dBA</span></div>
-          <div style="display:flex;gap:8px;align-items:center;margin-top:6px"><span style="width:28px;height:18px;background:#ca173e;border-radius:4px;display:inline-block"></span><span>> 65.0 dBA</span></div>
-          <div style="display:flex;gap:8px;align-items:center;margin-top:6px"><span style="width:28px;height:18px;background:#6a1cca;border-radius:4px;display:inline-block"></span><span>> 80.0 dBA</span></div>
+          <div style='display:flex;gap:8px;align-items:center;margin-top:6px'><span style='width:28px;height:18px;background:#bec718;border-radius:4px;display:inline-block'></span><span>> 45.0 dBA</span></div>
+          <div style='display:flex;gap:8px;align-items:center;margin-top:6px'><span style='width:28px;height:18px;background:#ca173e;border-radius:4px;display:inline-block'></span><span>> 65.0 dBA</span></div>
+          <div style='display:flex;gap:8px;align-items:center;margin-top:6px'><span style='width:28px;height:18px;background:#6a1cca;border-radius:4px;display:inline-block'></span><span>> 80.0 dBA</span></div>
         </div>
-      </div>
-    </article>
+	</article>
 
-    <article class="section">
-      <h2 tabindex="0" role="button" aria-expanded="false" onclick="toggle(this)">Referências</h2>
-      <div class="content card">
-        <ul>
-          <li><a href="https://www.mapaderuidosp.org.br/mapa-de-ruido/mapa-centro-sp/">INAD SP - Mapa</a></li>
-          <li><a href="https://beecorp.com.br/poluicao-sonora/">Becorp - Definição de poluição sonora</a></li>
-          <li><a href="https://prefeitura.sp.gov.br/web/subprefeituras/w/zeladoria/psiu/8831/">Acesse o Portal SP156</a></li>
-        </ul>
-      </div>
-    </article>
+	<article class="section">
+		<h2 tabindex="0" role="button" aria-expanded="false" onclick="toggle(this)">Referências e fontes</h2>
+		<div class="content card">
+			<ul>
+				<li><a href='https://www.mapaderuidosp.org.br/mapa-de-ruido/mapa-centro-sp/'>INAD SP - Mapa</a></li>
+				<li><a href='https://beecorp.com.br/poluicao-sonora/'>PUC-SP - Definição de poluição sonora</a></li>
+				<li><a href='https://prefeitura.sp.gov.br/web/subprefeituras/w/zeladoria/psiu/8831/'>Acesse o Portal SP156</a></li>
+				<li><a href='https://123ecos.com.br/docs/poluicao-sonora/'>Principais causadores da poluição sonora</a></li>
+				<li><a href='https://www.academia.edu/36267004/POLUI%C3%87%C3%83O_SONORA_URBANA_PRINCIPAIS_FONTES_ASPECTOS_JUR%C3%8DDICOS_E_T%C3%89CNICOS'>Becorp: Consequências e problemas que ela trás a saúde.</a></li>	
+			</ul>
+		</div>
+	</article>
+</main>
 
-    <footer>
-      <p>&copy; 2025 - Ruído Zero. Desenvolvido por Jhonatan Orlandi.</p>
-    </footer>
-  </main>
+<footer>
+	<p>© 2025 Ruído Zero - Projeto de Pesquisa Senac Lapa Tito</p>
+</footer>
 
-  <script>
-    function toggle(el){
-      const content = el.nextElementSibling;
-      const isOpen = content.classList.contains('open');
-      if(isOpen){
-        content.style.maxHeight = null; content.classList.remove('open');
-        content.querySelectorAll('img').forEach(i=>i.style.visibility='hidden');
-        el.setAttribute('aria-expanded','false');
-      } else {
-        content.querySelectorAll('img').forEach(i=>i.style.visibility='hidden');
-        content.classList.add('open');
-        content.style.maxHeight = content.scrollHeight + 'px';
-        setTimeout(()=>content.querySelectorAll('img').forEach(i=>i.style.visibility='visible'),260);
-        el.setAttribute('aria-expanded','true');
-        el.scrollIntoView({behavior:'smooth',block:'start'});
-      }
-    }
+<script>
+function toggle(header) {
+	const content = header.nextElementSibling;
+	const isOpen = content.classList.contains('open');
+	document.querySelectorAll('.section .content.open').forEach(section => {
+		section.classList.remove('open');
+		section.previousElementSibling.setAttribute('aria-expanded', 'false');
+	});
+	if (!isOpen) {
+		content.classList.add('open');
+		header.setAttribute('aria-expanded', 'true');
+	} else {
+		content.classList.remove('open');
+		header.setAttribute('aria-expanded', 'false');
+	}
+}
 
-    document.addEventListener('DOMContentLoaded', ()=>{
-      document.querySelectorAll('.content').forEach(c=>{c.style.maxHeight = null; c.classList.remove('open'); c.querySelectorAll('img').forEach(i=>i.style.visibility='hidden')});
-      document.querySelectorAll('h2[role="button"]').forEach(h=>{
-        h.addEventListener('keydown', (ev)=>{
-          if(ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); h.click(); }
-        });
-      });
-    });
-  </script>
+document.querySelectorAll('.section h2[role="button"]').forEach(header => {
+	header.addEventListener('keydown', (event) => {
+		const { key } = event;
+		if (key === 'Enter' || key === ' ') {
+			event.preventDefault();
+			toggle(header);
+		} else if (key === 'ArrowDown' || key === 'ArrowRight') {
+			event.preventDefault();
+			let next = header.parentElement.nextElementSibling;
+			while(next && !next.querySelector('h2[role="button"]')) {
+				next = next.nextElementSibling;
+			}
+			if(next) next.querySelector('h2[role="button"]').focus();
+		} else if (key === 'ArrowUp' || key === 'ArrowLeft') {
+			event.preventDefault();
+			let prev = header.parentElement.previousElementSibling;
+			while(prev && !prev.querySelector('h2[role="button"]')) {
+				prev = prev.previousElementSibling;
+			}
+			if(prev) prev.querySelector('h2[role="button"]').focus();
+		} else if (key === 'Tab') {
+		}
+	});
+});
+</script>
 </body>
 </html>
